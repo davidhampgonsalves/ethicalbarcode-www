@@ -1,0 +1,84 @@
+@media (max-width: 1000px) {
+
+  .split-spacer div {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+  }
+  
+  .hide-narrow {
+    display:none !important;
+  }
+    
+  .span12 {
+    padding-left:10px;
+  }
+
+  #head #header-left {
+    margin:0;
+    text-align: center;
+  }
+
+  #head #header-left .store-buttons {
+    margin-bottom: 100px;
+    text-align: center; 
+  }
+  
+  #head #header-left .store-buttons div {
+    float:none;
+  }
+
+  #head #header-right #phone, #head #header-right #slider-buttons {
+    margin:20px auto;
+  }
+  
+  #hero-bar .span4 {
+    margin:50px auto;
+    max-width:400px
+  }
+  
+  #sources {
+    width:360px;
+  }
+
+
+  #sources h2 {
+    font-size:18px;
+    height:40px;
+    line-height: 200%;
+    width:90%;
+  }
+
+  #install {
+    padding:20px 0 40px 0;
+  }
+
+  #install left {display:none;}
+
+  #install .logo {
+    margin:20px auto;
+  }
+
+  #install .store-buttons {
+    margin:0 auto; 
+    text-align:center;
+  }
+
+  footer .span4 {
+    margin:0;
+    text-align: center;
+  }
+
+  footer .span4 li {
+    display:inline;
+  }
+}
+
+@media (max-width: 500px) {
+  #head h2 { font-size:40px !important;}
+}
+
+@media (max-width: 400px) {
+  #head h2 { font-size:30px !important;}
+}

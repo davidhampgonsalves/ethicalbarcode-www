@@ -1,0 +1,83 @@
+/* css for narrow page view */
+<!--[if IE 9]>
+@media (max-width: 1000px) {
+  
+  .split-spacer div {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+  }
+  
+  .hide-narrow {
+    display:none !important;
+  }
+    
+  .span12 {
+    padding-left:10px;
+  }
+  
+
+  #head #header-left {
+    float:none;
+    margin:0;
+  }
+
+  #head #title-container {
+    margin:0 auto;
+  }
+
+  #head #header-right {
+    clear:both;
+    overflow:hidden;
+  }
+
+  #head #header-right #phone {
+    margin-top:50px;
+    margin-bottom:-160px;
+  }
+  
+  #hero-bar .span4 {
+    margin:50px auto;
+    max-width:400px
+  }
+  
+  .sources {
+    h2 {width:100%;}
+  }
+  
+  footer {
+    margin:40px;
+    text-align:center;
+  }
+
+  footer .content {
+    margin: 20px 0 10px 0;
+    width:100%;
+  }
+  
+  footer #links {
+    float:none;
+    margin: 0px;
+  }
+
+  footer #links a {
+    display:inline;
+    margin-right:10px;
+  }
+ 
+  footer #logo {
+    float:none;
+    margin:0 auto;
+  }
+
+}
+
+@media (max-width: 500px) {
+  #head h2 { font-size:40px !important;}
+}
+
+@media (max-width: 400px) {
+  #head h2 { font-size:30px !important;}
+}
+<![endif]-->

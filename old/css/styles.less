@@ -1,0 +1,414 @@
+@import 'elements.less';
+@import (less) 'bootstrap-responsive.css';
+
+@headColor: #131e1e;
+@headingColor: #222;
+@headingSize: 30px;
+
+@lightText: #999;
+@text: #131e1e;
+
+@ethicalLogoSize: 70px;
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('http://fonts.googleapis.com/css?family=Average');
+
+/*@font-face {
+  font-family: 'Average';
+  src: url('../average.woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../opensans-300.woff');
+}*/
+
+* {
+  padding:0;
+  margin:0;
+  text-shadow:none;
+}
+
+html {
+  min-width:300px;
+  overflow-x:hidden;
+}
+
+html, body {height: 100%;}
+
+body {
+  background-image: url('/img/patterns/bright_squares_green.png');
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+  font-size: 18px;
+  color: @text;
+  line-height:150%;
+}
+
+h1, h2, h3 {    font-family:Average;}
+
+.container-fluid {
+  margin:0 auto;
+  min-height:40%;
+}
+
+.container-fluid.smaller {
+  min-height:0;
+}
+
+.row-fluid {
+  max-width: 1300px;
+  margin:0 auto;
+}
+
+.logo {
+  width:150px;
+  height:150px;
+  background-image:url('/img/images.png');
+  background-size: auto 150px;
+  background-position:-2120px 0;
+}
+
+.spacer {
+  font-size:@headingSize;
+  text-align:center;
+  line-height:60%;
+  margin:60px 0 80px 0;
+  color:@lightText;
+
+  nth-of-type(2) {
+    margin-top:20px;
+  }
+}
+
+.split-spacer {
+  .spacer;
+  margin-top:-10px;
+  
+  div {
+    margin: 0 17px;
+  }
+  
+  div:nth-of-type(1) {
+    margin-bottom:-10px;
+  }
+  
+  div:nth-of-type(2) {
+    display:inline-block;
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    -o-transform: rotate(55deg);
+  }
+  
+  div:nth-of-type(3) {
+    display:inline-block;
+    -webkit-transform: rotate(-55deg);
+    -moz-transform: rotate(-55deg);
+    -ms-transform: rotate(-55deg);
+    -o-transform: rotate(-55deg);
+  }
+}
+
+.split-spacer-reverse {
+  .spacer;
+  
+  div {
+    margin: 0 45px;
+  }
+  
+  div:nth-of-type(1) {
+    display:inline-block;
+    -webkit-transform: rotate(-55deg);
+    -moz-transform: rotate(-55deg);
+    -ms-transform: rotate(-55deg);
+    -o-transform: rotate(-55deg);
+  }
+  
+  div:nth-of-type(2) {
+    display:inline-block;
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    -o-transform: rotate(55deg);
+  }
+  
+  div:nth-of-type(3) {margin:-20px;}
+}
+
+//initial top padding, will be adjusted by page script
+#head .head-centered.left {
+  margin-top: 300px;
+}
+
+#head .head-centered {
+  margin-top: 230px;
+}
+
+#head {
+  background: #f9fff2;
+  min-height:100%;
+
+
+  #header-left {
+    float:right;
+    margin-right:10%;
+    overflow:auto;
+
+    #title-container {
+      display:table;
+
+      .logo {
+        display:table-cell;
+        width:120px;
+        height:120px;
+        background-image:url('/img/images.png');
+        background-size: auto 120px;
+        background-position:-1696px 0;
+      }
+
+      #title {
+        display:table-cell;
+        vertical-align:middle;
+        padding-left:20px;
+
+        h1 {
+          font-family: Average;
+          font-size: 56px;
+          color:@headColor;
+          margin-bottom:25px;
+          margin-top:15px;
+          font-weight:300;
+        }
+        
+        h2 {
+          font-family: 'Open Sans', sans-serif;
+          margin:10px 0 0 5px;
+          color:@headColor;
+          font-size: 25px;
+          font-weight:300;
+        }
+      }
+    }
+
+    .content {
+      margin:120px 0;
+      margin-left:60px;
+      text-align:center;
+      font-size: 35px;
+      line-height:190%;
+    }
+  }
+
+  //overflow:hidden;
+  #header-right {
+
+    #phone {
+      background-image: url('/img/screenshots.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin:0 auto;
+      //margin-top:70%;
+      //margin-bottom:-70%;
+      width: 345px;
+      height:600px
+    }
+  }
+}
+
+.store-buttons {
+  padding-left:30px;
+  text-align:center;
+  
+  a {
+    background-repeat: no-repeat;
+    background-size: 150px 50px;
+    display:inline-block;
+    width: 150px;
+    height: 50px;
+    margin:0 10px;
+  }
+  
+  .android {
+    background-image:url('/img/badge_android.png');
+  }
+  
+  .ios {
+    background-image:url('/img/badge_ios.png');
+  }
+}
+
+#video {
+  text-align:center;
+  max-width:800px;
+
+  h2 {
+    margin: 20px 0;
+  }
+}
+
+#hero-bar {
+
+  .span4 {
+    padding:0 20px;
+    text-align:center;
+  }
+
+  h3 {
+    font-size:@headingSize;
+    padding:10px;
+    margin:0 auto;
+  }
+
+  .icon {
+    background-image:url('/img/images.png');
+    background-repeat: no-repeat;
+    background-position: -1701px 0;
+    background-size: auto 150px;
+    width: 100px;
+    height:100px;
+    margin:0 auto;
+  }
+
+  #learn-icon {
+    background-position: -1801px 0;
+  }
+
+  #support-icon {
+    background-position: -1901px 0;
+  }
+}
+
+#sources-description {
+  text-align:center;
+  
+  p {
+    margin:10px 10px;
+  }
+}
+
+.sources {
+  padding:5px;
+  text-align:center;
+ 
+  
+  h2 {
+    width:90%;
+    font-size:24px;
+    margin-bottom: 15px;
+  }
+  
+  a {
+    display:inline-block;
+    background-image:url('/img/images.png');
+    background-size: auto 150px;
+    width: 70px;
+    height:70px;
+    margin:5px;
+  }
+
+  #eco_logo {background-position: 0 0;}
+  #corporate_knights {background-position: -@ethicalLogoSize 0;}
+  #conservation_international {background-position: -@ethicalLogoSize 0;}
+  #vegan_action {background-position: -@ethicalLogoSize * 2 0;}
+  #csrhub {background-position: -@ethicalLogoSize * 4 0;}
+  #non_gmo_project {background-position: -@ethicalLogoSize * 5 0;}
+  #sustainable_brands {background-position: -@ethicalLogoSize * 6 0;}
+  #climate_counts {background-position: -@ethicalLogoSize * 7 0;}
+  #water_org {background-position: -@ethicalLogoSize * 8 0;}
+  #hrc {background-position: -@ethicalLogoSize * 9 0;}
+  #ethics_sphere {background-position: -@ethicalLogoSize * 10 0;}
+  #free2work {background-position: -@ethicalLogoSize * 11 0;}
+  #fair_trade {background-position: -@ethicalLogoSize * 12 0;}
+  #sustainable_packaging {background-position: -@ethicalLogoSize * 13 0;}
+  #leaping_bunny {background-position: -@ethicalLogoSize * 14 0;}
+  #wwf {background-position: -@ethicalLogoSize * 15 0;}
+  #maplecroft {background-position: -@ethicalLogoSize * 16 0;}
+  #newsweek {background-position: -@ethicalLogoSize * 17 0;}
+  #qai {background-position: -@ethicalLogoSize * 18 0;}
+  #rainforest_alliance {background-position: -@ethicalLogoSize * 19 0;}
+  #rank_a_brand {background-position: -@ethicalLogoSize * 20 0;}
+  #notsure {background-position: -@ethicalLogoSize * 21 0;}
+  #greenpeace {background-position: -@ethicalLogoSize * 22 0;}
+  #peta {background-position: -@ethicalLogoSize * 23 0;}
+}
+
+#install {
+  text-align:center;
+  
+  #logo-badge {
+    .logo;
+    margin:0 auto 15px auto;
+
+  }
+  
+  .store-buttons {
+    padding:0;
+    margin:0 auto 15px auto;
+    width:200px;
+  }
+  
+  a {margin:0;} 
+}
+
+#about {
+  text-align:left;
+  p {
+    margin:10px 15px;
+  }
+}
+
+footer {
+  display:table;
+  padding: 50px 60px;
+  margin:40px auto;
+  text-align:center;
+  a {color:@lightText;}
+  
+
+  #logo {
+    display:table-cell;
+    vertical-align:middle;
+    background-color: white;
+              float:none;
+    margin:0 auto;
+    width:160px;
+    height:160px;
+    .rounded(180px);
+    .box-shadow(0 0 20px #DDD);
+    
+    div {
+      background-image:url('/img/images.png');
+      background-position: -2000px 0px;
+      background-repeat: no-repeat;
+      background-size: auto 150px;
+      width:120px;
+      height:120px;
+      
+      margin:0 20px;
+    }
+  }
+
+  .content {
+    display:table-cell;
+    vertical-align:middle;
+    text-align:left;
+    color:@lightText;
+    margin: 20px 0 10px 0;
+    width:100%;
+    padding:30px;
+  }
+  
+  #links {
+    display:table-cell;
+    vertical-align:middle;
+    text-align:right;
+    width:140px;
+    margin: 0px;
+
+    a {
+      display:inline;
+      margin-right:10px;
+    }
+  }
+}

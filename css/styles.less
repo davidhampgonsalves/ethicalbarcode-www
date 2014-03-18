@@ -1,0 +1,564 @@
+@import 'elements.less';
+@import (less) 'bootstrap-responsive.css';
+
+@lightText: #999;
+@backgroundColor: #60AA85;
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+
+* {
+  padding:0;
+  margin:0;
+  text-shadow:none;
+}
+
+html {
+  min-width:300px;
+  overflow-x:hidden;
+}
+
+html, body {height: 100%;}
+
+.row-fluid {
+  max-width: 1300px;
+  margin:0 auto;
+}
+
+body {
+  background: #DCDCDC;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+  font-size: 15px;
+  color: #131e1e;
+  line-height:150%;
+}
+
+h1, h2, h3 {
+  font-weight:300;
+}
+
+.container-fluid {
+  margin:0 auto;
+  min-height:40%;
+}
+
+.row-fluid {
+  margin:0 auto;
+}
+
+
+.logo {
+  display:block;
+  position:relative;
+  background-color: #fff;
+  margin:0 auto;
+  width:160px;
+  height:160px;
+  .rounded(180px);
+  
+  div {
+    position:absolute;
+    top:20px;
+    left:20px;
+    background-image:url('../img/images.png');
+    background-position: -1790px 0px;
+    background-repeat: no-repeat;
+    background-size: auto 150px;
+    width:120px;
+    height:120px;
+  }
+}
+
+.spacer {
+  font-size:30px;
+  text-align:center;
+  line-height:60%;
+  margin:20px 0 20px 0;
+  color:@lightText;
+
+  nth-of-type(2) {
+    margin-top:20px;
+  }
+}
+
+.split-spacer {
+  .spacer;
+  margin-top:-10px;
+  margin-bottom:50px;
+  
+  div {
+    margin: 0 17px;
+  }
+  
+  div:nth-of-type(1) {
+    margin-bottom:-10px;
+  }
+  
+  div:nth-of-type(2) {
+    display:inline-block;
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    -o-transform: rotate(55deg);
+  }
+  
+  div:nth-of-type(3) {
+    display:inline-block;
+    -webkit-transform: rotate(-55deg);
+    -moz-transform: rotate(-55deg);
+    -ms-transform: rotate(-55deg);
+    -o-transform: rotate(-55deg);
+  }
+}
+
+.split-spacer-reverse {
+  .spacer;
+  margin-top:-10px;
+  margin-bottom:80px;
+  
+  div {
+    margin: 0 45px;
+  }
+  
+  div:nth-of-type(1) {
+    display:inline-block;
+    -webkit-transform: rotate(-55deg);
+    -moz-transform: rotate(-55deg);
+    -ms-transform: rotate(-55deg);
+    -o-transform: rotate(-55deg);
+  }
+  
+  div:nth-of-type(2) {
+    display:inline-block;
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    -o-transform: rotate(55deg);
+  }
+  
+  div:nth-of-type(3) {margin:-20px;}
+}
+
+#head {
+  min-height:80%;
+  background: @backgroundColor;
+  border-top:2px solid #72C29B;
+
+
+  #header-left {
+    margin-top:28%;
+    margin-left:10%;
+    overflow:auto;
+
+    color:white;
+
+    font-size: 25px;
+    line-height:190%;
+
+    h1 {margin-bottom:10px;}
+
+    .store-buttons {
+      margin-top:30px;
+      text-align:left;
+    }
+  }
+
+  //overflow:hidden;
+  #header-right {
+    @phone-width: 270px;
+    @phone-height: 525px;
+    @phone-radius: 50px;
+
+    #slider-buttons {
+      margin:0 0 40px auto;
+      text-align:center;
+      width: @phone-width;
+    }
+
+    #slider-buttons a {
+      width:7px;
+      height:7px;
+      
+      border:2px solid #fff;
+      display:inline-block;
+      margin-left: 10px;
+      .rounded(10px);
+    }
+
+    #slider-buttons a.active {
+      background: white;
+    }
+
+    #slider-buttons a:nth-of-type(1) {
+      margin-left:0;
+    }
+
+    #phone, #phone * {
+      border:2px solid white;
+      .rounded(@phone-radius);
+      position:absolute;
+    }
+
+    #phone {
+      position:relative;
+      margin:10% 0 20px auto;
+
+      width: @phone-width;
+      height:@phone-height;
+    }
+
+    #phone-inner {
+      width: @phone-width - 15;
+      height:@phone-height - 15;
+
+      .rounded(@phone-radius - 6);
+      top:5px;
+      left:5px;
+    }
+
+    #phone-screen {
+      .rounded(0);
+      top:80px;
+      left: 8px;
+      width: @phone-width - 35;
+      height: (@phone-height / 3) * 2;
+
+      background-image:url('../img/screenshots.png');
+      background-position: -@phone-width 0;
+      //background-size: @phone-width - 35px (@phone-height / 3) * 2;
+      background-repeat: no-repeat;
+
+      -webkit-transition:background-position .3s ease;  
+      -moz-transition:background-position .3s ease;  
+      -o-transition:background-position .3s ease;  
+      transition:background-position .3s ease; 
+    }
+
+    .phone-button {
+      background:white;
+      .rounded(3px 0 0 3px);
+      left:-4px;
+      height:20px;
+    }
+
+    #phone-power-button {
+      right:50px;
+      left:auto;
+      top:-4px;
+      width:35px;
+      height:0;
+
+      .rounded(3px 3px 0 0);
+    }
+
+    #phone-quiet-button {
+      top:50px;
+      height:25px;
+    }
+
+    #phone-volume-up-button {
+      top:100px;
+    }
+
+    #phone-volume-down-button {
+
+      top:150px;
+    }
+
+    #phone-earspeaker {
+      .rounded(4px);
+
+      top:40px;
+      left:50%;
+
+      width:50px;
+      margin-left:-25px;
+      height:5px;
+    }
+
+    #phone-front-camera {
+      .rounded(10px);
+
+      top:39px;
+      left:36%;
+
+      width:8px;
+      height:8px;
+      margin-left:-5px;
+      
+      div {
+        .rounded(1px);
+
+        top:2px;
+        left:2px;
+        border:none;
+        background: #fff;
+        width:4px;
+        height:4px;
+      }   
+    }
+
+    #phone-menu-button {
+      .rounded(20px);
+      bottom:20px;
+      left: 50%;
+      margin-left:-17px;
+
+      height:35px;
+      width:35px;
+    }
+  }
+}
+
+.header-logo {
+  margin-top:-80px;
+}
+
+.store-buttons {
+  text-align:center;
+  
+
+  div {
+    font-size: 20px;
+    line-height:130%;
+    text-align:right;
+    margin:20px 10px 0 10px;
+    display:inline-block;
+    float:left;  
+  }
+  
+  a {
+    display:inline-block;
+    height: 80px;
+    width:80px;
+    margin:0 10px;
+    background-image:url('../img/images.png');
+    background-repeat: no-repeat;
+
+    -webkit-transition:background-position .3s ease;  
+    -moz-transition:background-position .3s ease;  
+    -o-transition:background-position .3s ease;  
+    transition:background-position .3s ease; 
+  }
+  
+  .android {
+    background-position: -1612px 25px;
+    background-color: #A4C739;
+  }
+
+  .android:hover {
+    background-position: -1612px 10px;    
+  }
+
+  .android:active { 
+    background-position: -1612px 15px; 
+  }
+  
+  .ios {
+    background-position: -1708px 25px;
+    background-color: #6AAAEB;
+  }
+
+  .ios:hover {
+    background-position: -1708px 10px;    
+  }
+
+  .ios:active { 
+    background-position: -1708px 15px; 
+  }
+}
+
+#hero-bar {
+
+  .span4 {
+    padding:0 50px;
+    text-align:center;
+  }
+
+  h3 {
+    font-size:24px;
+    margin:10px 0;
+  }
+
+  .icon {
+    background-image:url('../img/images.png');
+    background-repeat: no-repeat;
+    background-position: -1299px 0;
+    width: 100px;
+    height:100px;
+    margin:0 auto;
+  }
+
+  #learn-icon {
+    background-position: -1400px 0;
+  }
+
+  #support-icon {
+    background-position: -1505px 0;
+  }
+}
+
+#sources-description {
+  text-align:center;
+  
+  p {
+    margin:10px 10px;
+  }
+}
+
+#sources {
+  margin:0 auto 60px auto;
+  width:800px;
+  text-align:center;
+  
+  div {
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size:24px;
+    display:inline-block;
+    background: #60AA85;
+    width:620px;
+
+    color:white;
+    height:50px;
+    line-height:180%;
+  }
+  
+  a {
+    display:inline-block;
+    background-image:url('../img/images.png');
+    width: 50px;
+    height:50px;
+    margin:5px;
+  }
+
+  @ethicalLogoSize: 50px;
+  #eco_logo {background-position: 0 0;}
+  #corporate_knights {background-position: -@ethicalLogoSize 0;}
+  #conservation_international {background-position: -@ethicalLogoSize 0;}
+  #vegan_action {background-position: -@ethicalLogoSize * 3 0;}
+  #csrhub {background-position: -@ethicalLogoSize * 4 0;}
+  #non_gmo_project {background-position: -@ethicalLogoSize * 5 0;}
+  #sustainable_brands {background-position: -@ethicalLogoSize * 6 0;}
+  #climate_counts {background-position: -@ethicalLogoSize * 7 0;}
+  #water_org {background-position: -@ethicalLogoSize * 8 0;}
+  #hrc {background-position: -@ethicalLogoSize * 9 0;}
+  #ethics_sphere {background-position: -@ethicalLogoSize * 10 0;}
+  #free2work {background-position: -@ethicalLogoSize * 11 0;}
+  #fair_trade {background-position: -@ethicalLogoSize * 12 0;}
+  #sustainable_packaging {background-position: -@ethicalLogoSize * 13 0;}
+  #leaping_bunny {background-position: -@ethicalLogoSize * 14 0;}
+  #wwf {background-position: -@ethicalLogoSize * 15 0;}
+  #maplecroft {background-position: -@ethicalLogoSize * 16 0;}
+  #newsweek {background-position: -@ethicalLogoSize * 17 0;}
+  #qai {background-position: -@ethicalLogoSize * 18 0;}
+  #rainforest_alliance {background-position: -@ethicalLogoSize * 19 0;}
+  #rank_a_brand {background-position: -@ethicalLogoSize * 20 0;}
+  #notsure {background-position: -@ethicalLogoSize * 21 0;}
+  #greenpeace {background-position: -@ethicalLogoSize * 22 0;}
+  #peta {background-position: -@ethicalLogoSize * 23 0;}
+}
+
+#install {
+  text-align:left;
+  background: #E6E6E6;
+  background-image:url('../img/install-background.jpg');
+  background-size: auto 2000px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 100px 0 90px 0;
+  
+  .logo {
+    margin: 0 auto;
+  }
+  
+  .store-buttons {
+    div {
+      display:block;
+      text-align:center;
+      float:none;
+      color:#fff;
+      font-size: 25px;
+      margin:20px 0 20px 0;
+    }
+    padding:0;
+    text-align:center;
+  }
+}
+
+footer {
+  background: #7A6A53;
+  border-bottom:2px solid #72C29B;
+
+  a {color:#fff}
+
+  .span8 {
+    text-align:left;
+    color:#fff;
+    width:100%;
+    padding:30px;
+  }
+  
+  .span4 {
+    text-align:right;
+    margin-top: 25px;
+
+    li {
+      list-style:none;
+    }
+
+    a {
+      display:inline;
+      margin-right:10px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.subpage {
+  .row-fluid {
+    max-width: 1000px;
+    margin:0 auto;
+  }
+
+  header {
+    overflow:auto;
+    padding:20px;
+    width:100%;
+    background: @backgroundColor;
+    color:white;
+
+  }
+
+  h1 {
+    display:block;
+    padding-left: 30px;
+    margin-top:75px;
+    float:left;
+    font-size:30px;
+  }
+  
+  p {
+   padding: 15px 0;
+  }
+
+  .logo {
+    float:left;
+  }
+}
+
+
+.press img {
+  border:none;
+  display:block;
+  margin:20px auto;
+}
+
