@@ -1,5 +1,5 @@
 @import 'elements.less';
-@import (less) 'bootstrap-responsive.css';
+//@import (less) 'bootstrap-responsive.css';
 
 @lightText: #999;
 @backgroundColor: #60AA85;
@@ -220,12 +220,13 @@ h1, h2, h3 {
       .rounded(0);
       top:80px;
       left: 8px;
-      width: @phone-width - 35;
+      width: @phone-width - 31;
       height: (@phone-height / 3) * 2;
 
+      border:none;
+
       background-image:url('../img/screenshots.png');
-      background-position: -@phone-width 0;
-      //background-size: @phone-width - 35px (@phone-height / 3) * 2;
+      background-size: (@phone-width - 31)*5 auto;
       background-repeat: no-repeat;
 
       -webkit-transition:background-position .3s ease;  
