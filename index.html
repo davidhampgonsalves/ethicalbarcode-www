@@ -106,7 +106,7 @@
     <![endif]-->
     
   </head>
-  <body>
+  <body class=block-onload-animations onload='javascript:init()'>
     <div id=head class=container-fluid>
       <div class=row-fluid>
         <div id=header-right class='span5'>
@@ -241,9 +241,11 @@
           </div>
           <div class=span4>
             <ul>
-              <li><a href='mailto:davidhampgonsalves@gmail.com'>contact</a>
-              <li><a href='/press.htm'>press</a>
-              <li><a href='/faq.htm'>faq</a>
+                <li><a href='/faq.htm'>faq</a>
+                <li><a href='/about.htm'>about</a>
+                <li><a href='mailto:davidhampgonsalves@gmail.com'>contact</a>
+                <li><a href='/privacy-policy.htm'>privacy</a>
+                <li><a href='/press.htm'>press</a>
             </ul>
           </div>
         </div>
@@ -259,10 +261,14 @@
       var timer, index = 0;
       var sliderButtonsElement = document.getElementById('slider-buttons');
       
-      setupButtons();
-      changeImage();
+      function init() {
+        setupButtons();
+        changeImage();
+      }
 
       function setupButtons() {
+        //remove the animation blocks that are in place during load
+        document.getElementsByTagName('body')[0].className = '';
 
         for(var i=0 ; i < imageCount ; i++) {
           var b = document.createElement('a');

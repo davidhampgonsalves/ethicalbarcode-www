@@ -46,6 +46,13 @@ h1, h2, h3 {
   margin:0 auto;
 }
 
+.block-onload-animations * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 
 .logo {
   display:block;
@@ -497,12 +504,13 @@ footer {
     text-align:left;
     color:#fff;
     width:100%;
+    margin-top:20px;
     padding:30px;
   }
   
   .span4 {
     text-align:right;
-    margin-top: 25px;
+    margin: 25px 0;
 
     li {
       list-style:none;
@@ -526,6 +534,10 @@ footer {
   .row-fluid {
     max-width: 1000px;
     margin:0 auto;
+  }
+
+  .main {
+    margin-bottom: 35px;
   }
 
   header {
