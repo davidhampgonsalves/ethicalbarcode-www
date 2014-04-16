@@ -157,7 +157,7 @@
           <div id=scan-icon class=icon></div>
           <h3>Scan</h3>
           <p>
-            Point Ethical Barcode at products in the grocery store to instantly discover who manufacteured and what they stand for.
+            Point Ethical Barcode at products in the grocery store to instantly discover who manufactured and what they stand for.
           </p>
         </div>
         <div class="span4">
@@ -262,13 +262,15 @@
       var sliderButtonsElement = document.getElementById('slider-buttons');
       
       function init() {
-        setupButtons();
-        changeImage();
-      }
-
-      function setupButtons() {
         //remove the animation blocks that are in place during load
         document.getElementsByTagName('body')[0].className = '';
+      }
+      
+      setupButtons();
+      changeImage();
+      
+
+      function setupButtons() {
 
         for(var i=0 ; i < imageCount ; i++) {
           var b = document.createElement('a');
