@@ -135,8 +135,8 @@
 
             <div class=store-buttons>
               <div>Availiable<br> for</div>
-              <a class=android href='https://play.google.com/store/apps/details?id=com.davidhampgonsalves.ethicalbarcode' onclick="_gaq.push(['_trackEvent', 'appstore', 'navigate', 'android'])"></a>
-              <a class=ios href='https://itunes.apple.com/us/app/ethical-barcode/id741605912?ls=1&mt=8' onclick="_gaq.push(['_trackEvent', 'appstore', 'navigate', 'ios'])"></a>
+              <a class=android href='https://play.google.com/store/apps/details?id=com.davidhampgonsalves.ethicalbarcode' onclick="trackAppstoreNav('android')"></a>
+              <a class=ios href='https://itunes.apple.com/us/app/ethical-barcode/id741605912?ls=1&mt=8' onclick="trackAppstoreNav('ios')"></a>
             </div>
           </div>
         </div>
@@ -226,8 +226,8 @@
           <div class=logo><div></div></div>
           <div class=store-buttons>
               <div>Availiable for</div>
-              <a class=android href='https://play.google.com/store/apps/details?id=com.davidhampgonsalves.ethicalbarcode' onclick="_gaq.push(['_trackEvent', 'appstore', 'navigate', 'android'])"></a>
-              <a class=ios href='https://itunes.apple.com/us/app/ethical-barcode/id741605912?ls=1&mt=8' onclick="_gaq.push(['_trackEvent', 'appstore', 'navigate', 'ios'])"></a>
+              <a class=android href='https://play.google.com/store/apps/details?id=com.davidhampgonsalves.ethicalbarcode' onclick="trackAppstoreNav('android')"></a>
+              <a class=ios href='https://itunes.apple.com/us/app/ethical-barcode/id741605912?ls=1&mt=8' onclick="trackAppstoreNav('ios')"></a>
           </div>
         </div>
       </div>
@@ -313,6 +313,14 @@
         index = index >= imageCount - 1 ? 0 : index + 1;
 
         timer = window.setTimeout(changeImage, 5000);
+      }
+
+      function trackAppstoreNav(platform) {
+        ga('send', 'event', {
+            'eventCategory': 'appstore',
+            'eventAction': 'navigate',
+            'eventValue': platform
+        });
       }
 
     </script>
