@@ -1,8 +1,14 @@
 @import 'elements.less';
-@import (less) 'bootstrap-responsive.css';
+//@import (less) 'bootstrap-responsive.css';
 
 @lightText: #999;
-@backgroundColor: #60AA85;
+
+@headerColor: #60AA85;
+@heroBarColor: #CEFEC7;
+@animationColor: #DCFED7;
+@backgroundColor: #EBFFE7;
+@footerColor: #564334;
+
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
 
@@ -25,7 +31,7 @@ html, body {height: 100%;}
 }
 
 body {
-  background: #DCDCDC;
+  background: @backgroundColor;
   font-family: 'Open Sans', sans-serif;
   font-weight:300;
   font-size: 15px;
@@ -76,6 +82,10 @@ h1, h2, h3 {
   }
 }
 
+.section {
+  //border-top: 2px solid #FFF;
+}
+
 .spacer {
   font-size:30px;
   text-align:center;
@@ -88,67 +98,10 @@ h1, h2, h3 {
   }
 }
 
-.split-spacer {
-  .spacer;
-  margin-top:-10px;
-  margin-bottom:50px;
-
-  div {
-    margin: 0 17px;
-  }
-
-  div:nth-of-type(1) {
-    margin-bottom:-10px;
-  }
-
-  div:nth-of-type(2) {
-    display:inline-block;
-    -webkit-transform: rotate(55deg);
-    -moz-transform: rotate(55deg);
-    -ms-transform: rotate(55deg);
-    -o-transform: rotate(55deg);
-  }
-
-  div:nth-of-type(3) {
-    display:inline-block;
-    -webkit-transform: rotate(-55deg);
-    -moz-transform: rotate(-55deg);
-    -ms-transform: rotate(-55deg);
-    -o-transform: rotate(-55deg);
-  }
-}
-
-.split-spacer-reverse {
-  .spacer;
-  margin-top:-10px;
-  margin-bottom:80px;
-
-  div {
-    margin: 0 45px;
-  }
-
-  div:nth-of-type(1) {
-    display:inline-block;
-    -webkit-transform: rotate(-55deg);
-    -moz-transform: rotate(-55deg);
-    -ms-transform: rotate(-55deg);
-    -o-transform: rotate(-55deg);
-  }
-
-  div:nth-of-type(2) {
-    display:inline-block;
-    -webkit-transform: rotate(55deg);
-    -moz-transform: rotate(55deg);
-    -ms-transform: rotate(55deg);
-    -o-transform: rotate(55deg);
-  }
-
-  div:nth-of-type(3) {margin:-20px;}
-}
 
 #head {
   min-height:80%;
-  background: @backgroundColor;
+  background: @headerColor;
   border-top:2px solid #72C29B;
 
 
@@ -320,6 +273,7 @@ h1, h2, h3 {
 
 .header-logo {
   margin-top:-80px;
+  margin-bottom:-80px;
 }
 
 .store-buttons {
@@ -377,6 +331,9 @@ h1, h2, h3 {
 }
 
 #hero-bar {
+  padding-top:60px;
+  padding-bottom:1px;
+  background: @heroBarColor;
 
   .span4 {
     padding:0 50px;
@@ -404,6 +361,64 @@ h1, h2, h3 {
   #support-icon {
     background-position: -1505px 0;
   }
+
+  .split-spacer {
+    .spacer;
+    margin-top:0px;
+    margin-bottom:50px;
+
+    div {
+      margin: 0 17px;
+    }
+
+    div:nth-of-type(1) {
+      margin-bottom:-10px;
+    }
+
+    div:nth-of-type(2) {
+      display:inline-block;
+      -webkit-transform: rotate(55deg);
+      -moz-transform: rotate(55deg);
+      -ms-transform: rotate(55deg);
+      -o-transform: rotate(55deg);
+    }
+
+    div:nth-of-type(3) {
+      display:inline-block;
+      -webkit-transform: rotate(-55deg);
+      -moz-transform: rotate(-55deg);
+      -ms-transform: rotate(-55deg);
+      -o-transform: rotate(-55deg);
+    }
+  }
+
+  .split-spacer-reverse {
+    .spacer;
+    margin-top:25px;
+    margin-bottom:70px;
+
+    div {
+      margin: 0 45px;
+    }
+
+    div:nth-of-type(1) {
+      display:inline-block;
+      -webkit-transform: rotate(-55deg);
+      -moz-transform: rotate(-55deg);
+      -ms-transform: rotate(-55deg);
+      -o-transform: rotate(-55deg);
+    }
+
+    div:nth-of-type(2) {
+      display:inline-block;
+      -webkit-transform: rotate(55deg);
+      -moz-transform: rotate(55deg);
+      -ms-transform: rotate(55deg);
+      -o-transform: rotate(55deg);
+    }
+
+    div:nth-of-type(3) {margin:-20px;}
+  }
 }
 
 #sources-description {
@@ -416,6 +431,8 @@ h1, h2, h3 {
 
 #sources {
   margin:0 auto 60px auto;
+  padding-top: 160px;
+  padding-bottom: 90px;
   width:800px;
   text-align:center;
 
@@ -464,6 +481,10 @@ h1, h2, h3 {
 
   #greenpeace {background-position: -@ethicalLogoSize * 20 0;}
   #peta {background-position: -@ethicalLogoSize * 12 0;}
+
+  .spacer {
+    margin-top:30px;
+  }
 }
 
 #install {
@@ -493,8 +514,312 @@ h1, h2, h3 {
   }
 }
 
+#animation {
+  width:100%;
+  height:600px;
+  background:@animationColor;
+
+  position:relative;
+
+  overflow: hidden;
+
+  .span12, .row-fluid {width:100%; max-width:100%;}
+
+  .object {
+      background-image:url('../img/animation.png');
+      background-size: auto 500px;
+
+      position:absolute;
+  }
+
+  #animation-shelf {
+    bottom:0;
+
+    width:100%;
+    height:30px;
+
+    background: #9E8276;
+
+    z-index: 10;
+  }
+}
+
+@phoneOffset:-80px;
+.animate {
+
+  * {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    -ms-animation-duration: 5s;
+    -o-animation-duration: 5s;
+    animation-duration: 5s;
+
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+
+  #animation-item {
+    z-index: 15;
+
+    bottom:5px;
+    right:150%;
+
+    background-position: -380px bottom;
+    background-repeat:no-repeat;
+
+    margin-left:-250px;
+
+    height:600px;
+    width: 470px;
+
+    -webkit-animation-name: item;
+    -moz-animation-name: item;
+    -ms-animation-name: item;
+    -o-animation-name: item;
+    animation-name: item;
+  }
+
+
+  #animation-phone {
+    z-index: 20;
+
+    position:absolute;
+
+    bottom:@phoneOffset;
+    left:50%;
+
+    margin-left:-195px;
+
+    width:375px;
+    height:500px;
+
+    -webkit-animation-name: phone;
+    -moz-animation-name: phone;
+    -ms-animation-name: phone;
+    -o-animation-name: phone;
+    animation-name: phone;
+
+    #animation-phone-background {
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+
+      z-index:25;
+
+      background-position: -10px 0;
+    }
+  }
+
+  #animation-screen {
+    height:305px;
+    width:251px;
+
+    z-index:15;
+
+    visibility:hidden;
+
+    left:69px;
+    top:62px;
+
+    position:absolute;
+
+    background-image:url('../img/animation-screenshots.png');
+    background-size: 753px 305px;
+    background-repeat: no-repeat;
+
+    -webkit-animation-name: screen;
+    -moz-animation-name: screen;
+    -ms-animation-name: screen;
+    -o-animation-name: screen;
+    animation-name: screen;
+
+    div {
+      position:absolute;
+
+      margin-left:-45%;
+      width: 90%;
+      height:40px;
+
+      bottom:10px;
+      left:50%;
+
+      background: #60aa85;
+      color:#FFF;
+
+      border-radius: 20px;
+
+      text-align:center;
+      line-height:40px;
+
+      -webkit-animation-name: buttonTap;
+      -moz-animation-name: buttonTap;
+      -ms-animation-name: buttonTap;
+      -o-animation-name: buttonTap;
+      animation-name: buttonTap;
+    }
+  }
+
+  #animation-finger {
+    margin-left:20px;
+    left:50%;
+    bottom:-150%;
+
+    z-index: 25;
+
+    width:50px;
+    height:300px;
+
+    border-radius: 30px;
+    background:#f2d7aa;
+
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+
+    transform:rotate(-10deg);
+
+    -webkit-animation-name: fingerTap;
+    -moz-animation-name: fingerTap;
+    -ms-animation-name: fingerTap;
+    -o-animation-name: fingerTap;
+    animation-name: fingerTap;
+
+    div {
+      position:absolute;
+
+      left:50%;
+      top:5px;
+
+      margin-left:-17px;
+      width:35px;
+      height:30px;
+      border-radius: 15px;
+
+      background-color: #fff;
+      opacity: 0.5;
+    }
+  }
+}
+
+@keyframes item {
+  /* reset */
+  0% {
+    opacity:0;
+    left:-30%;
+  }
+
+  1% {
+    left:10%;
+    opacity:0;
+  }
+  2% {
+    opacity:1;
+    left:130%;
+  }
+
+  /* move product */
+
+  /* scan product */
+  25% {left:50%;}
+  40% {left:50%;}
+
+  75% {
+    left:-30%;
+    opacity:1;
+  }
+
+  /* look at screen */
+  100% {left:-30%;}
+}
+
+@keyframes phone {
+  /* reset */
+  0% {bottom: @phoneOffset;}
+
+  /* scan product */
+  20% {bottom: @phoneOffset - 80px;}
+  35% {bottom: @phoneOffset - 80px;}
+
+  /* look at screen */
+  50% {bottom:@phoneOffset;}
+  100% {bottom:@phoneOffset;}
+}
+
+@keyframes screen {
+  /* scan product */
+  0% {visibility: hidden}
+  30% {visibility: hidden}
+
+  /* look at screen */
+  31% {visibility: visible}
+
+  91% {visibility: visible}
+  92% {visibility: hidden}
+
+  100% {visibility: hidden}
+}
+
+@fingerOffset: -350px;
+@keyframes fingerTap {
+  /* reset */
+  0% {bottom: @fingerOffset;}
+
+  80% {bottom: @fingerOffset;}
+
+  /* move finger up */
+  85% {
+    bottom: @fingerOffset + 160px;
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+  }
+
+  88% {box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);}
+  91% {box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);}
+
+  92% {bottom: @fingerOffset + 160px;}
+  96% {bottom: @fingerOffset;}
+  100% {bottom: @fingerOffset;}
+}
+
+@keyframes buttonTap {
+  /* reset */
+  0% {
+    background:#60aa85;
+    opacity:0;
+  }
+
+  30% {opacity:0;}
+  31% {opacity:1;}
+
+  87% {background:#60aa85;}
+
+  /*button pressed*/
+  88% {background: #77D3A5;}
+  89% {background: #77D3A5;}
+
+  90% {background:#60aa85;}
+  94% {opacity:1;}
+  95% {opacity:0;}
+
+  100% {
+    background:#60aa85;
+    opacity:0;
+  }
+}
+
+/* webkit keyframes */
+@-webkit-keyframes item { /* reset */ 0% { opacity:0; left:-30%; } 1% { left:10%; opacity:0; } 2% { opacity:1; left:130%; } /* move product */ /* scan product */ 25% {left:50%;} 40% {left:50%;} 75% { left:-30%; opacity:1; } /* look at screen */ 100% {left:-30%;} } @-webkit-keyframes phone { /* reset */ 0% {bottom: @phoneOffset;} /* scan product */ 20% {bottom: @phoneOffset - 80px;} 35% {bottom: @phoneOffset - 80px;} /* look at screen */ 50% {bottom:@phoneOffset;} 100% {bottom:@phoneOffset;} } @-webkit-keyframes screen { /* scan product */ 0% {visibility: hidden} 30% {visibility: hidden} /* look at screen */ 31% {visibility: visible} 91% {visibility: visible} 92% {visibility: hidden} 100% {visibility: hidden} } @fingerOffset: -350px; @-webkit-keyframes fingerTap { /* reset */ 0% {bottom: @fingerOffset;} 80% {bottom: @fingerOffset;} /* move finger up */ 85% { bottom: @fingerOffset + 160px; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2); } 88% {box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);} 91% {box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);} 92% {bottom: @fingerOffset + 160px;} 96% {bottom: @fingerOffset;} 100% {bottom: @fingerOffset;} } @-webkit-keyframes buttonTap { /* reset */ 0% { background:#60aa85; opacity:0; } 30% {opacity:0;} 31% {opacity:1;} 87% {background:#60aa85;} /*button pressed*/ 88% {background: #77D3A5;} 89% {background: #77D3A5;} 90% {background:#60aa85;} 94% {opacity:1;} 95% {opacity:0;} 100% { background:#60aa85; opacity:0; } }
+
+
 footer {
-  background: #7A6A53;
+  background: @footerColor;
   border-bottom:2px solid #72C29B;
 
   a {color:#fff}
