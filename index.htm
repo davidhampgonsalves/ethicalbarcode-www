@@ -314,7 +314,7 @@
         var screenPositions = [0, -251, -502];
         var i = 0;
 
-        document.getElementById('animation-item').addEventListener("animationiteration", function() {
+        var changeAnimationImages = function() {
           //change item image
           i += 1;
           if(i >= iconPositions.length)
@@ -323,7 +323,13 @@
           item.style.backgroundPosition = iconPositions[i] + 'px bottom';
           screen.style.backgroundPosition = screenPositions[i] + 'px bottom';
 
-        }, false);
+        }
+        var animationItem = document.getElementById('animation-item');
+
+        animationItem.addEventListener("webkitAnimationIteration", changeAnimationImages, false);
+        animationItem.addEventListener("oanimationiteration", changeAnimationImages, false);
+        animationItem.addEventListener("MSAnimationIteration", changeAnimationImages, false);
+        animationItem.addEventListener("animationiteration", changeAnimationImages, false);
       }
 
       function setupButtons() {

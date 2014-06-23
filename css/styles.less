@@ -716,14 +716,10 @@ h1, h2, h3 {
     left:-30%;
   }
 
-  1% {
-    left:10%;
-    opacity:0;
-  }
-  2% {
-    opacity:1;
-    left:130%;
-  }
+  1% {opacity:0;}
+  3% {left:130%;}
+  4% {opacity:0;}
+  5% {opacity:1;}
 
   /* move product */
 
@@ -815,7 +811,7 @@ h1, h2, h3 {
 }
 
 /* webkit keyframes */
-@-webkit-keyframes item { /* reset */ 0% { opacity:0; left:-30%; } 1% { left:10%; opacity:0; } 2% { opacity:1; left:130%; } /* move product */ /* scan product */ 25% {left:50%;} 40% {left:50%;} 75% { left:-30%; opacity:1; } /* look at screen */ 100% {left:-30%;} } @-webkit-keyframes phone { /* reset */ 0% {bottom: @phoneOffset;} /* scan product */ 20% {bottom: @phoneOffset - 80px;} 35% {bottom: @phoneOffset - 80px;} /* look at screen */ 50% {bottom:@phoneOffset;} 100% {bottom:@phoneOffset;} } @-webkit-keyframes screen { /* scan product */ 0% {visibility: hidden} 30% {visibility: hidden} /* look at screen */ 31% {visibility: visible} 91% {visibility: visible} 92% {visibility: hidden} 100% {visibility: hidden} } @fingerOffset: -350px; @-webkit-keyframes fingerTap { /* reset */ 0% {bottom: @fingerOffset;} 80% {bottom: @fingerOffset;} /* move finger up */ 85% { bottom: @fingerOffset + 160px; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2); } 88% {box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);} 91% {box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);} 92% {bottom: @fingerOffset + 160px;} 96% {bottom: @fingerOffset;} 100% {bottom: @fingerOffset;} } @-webkit-keyframes buttonTap { /* reset */ 0% { background:#60aa85; opacity:0; } 30% {opacity:0;} 31% {opacity:1;} 87% {background:#60aa85;} /*button pressed*/ 88% {background: #77D3A5;} 89% {background: #77D3A5;} 90% {background:#60aa85;} 94% {opacity:1;} 95% {opacity:0;} 100% { background:#60aa85; opacity:0; } }
+@-webkit-keyframes item { /* reset */ 0% { opacity:0; left:-30%; } 1% {opacity:0;} 3% {left:130%;} 4% {opacity:0;} 5% {opacity:1;} /* move product */ /* scan product */ 25% {left:50%;} 40% {left:50%;} 75% { left:-30%; opacity:1; } /* look at screen */ 100% {left:-30%;} } @-webkit-keyframes phone { /* reset */ 0% {bottom: @phoneOffset;} /* scan product */ 20% {bottom: @phoneOffset - 80px;} 35% {bottom: @phoneOffset - 80px;} /* look at screen */ 50% {bottom:@phoneOffset;} 100% {bottom:@phoneOffset;} } @-webkit-keyframes screen { /* scan product */ 0% {visibility: hidden} 30% {visibility: hidden} /* look at screen */ 31% {visibility: visible} 91% {visibility: visible} 92% {visibility: hidden} 100% {visibility: hidden} } @fingerOffset: -350px; @-webkit-keyframes fingerTap { /* reset */ 0% {bottom: @fingerOffset;} 80% {bottom: @fingerOffset;} /* move finger up */ 85% { bottom: @fingerOffset + 160px; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2); } 88% {box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);} 91% {box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);} 92% {bottom: @fingerOffset + 160px;} 96% {bottom: @fingerOffset;} 100% {bottom: @fingerOffset;} } @-webkit-keyframes buttonTap { /* reset */ 0% { background:#60aa85; opacity:0; } 30% {opacity:0;} 31% {opacity:1;} 87% {background:#60aa85;} /*button pressed*/ 88% {background: #77D3A5;} 89% {background: #77D3A5;} 90% {background:#60aa85;} 94% {opacity:1;} 95% {opacity:0;} 100% { background:#60aa85; opacity:0; } }
 
 
 footer {
