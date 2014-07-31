@@ -30,8 +30,7 @@
     <!--[if gt IE 8]><!-->
       <!-- Mobile/Narrow Styles -->
       <style>
-        media (max-width: 1000px) {
-
+        @media (max-width: 1000px) {
           .split-spacer div {
             -webkit-transform: none !important;
             -moz-transform: none !important;
@@ -388,7 +387,8 @@
           stylesheet.href = './css/styles-bellow.css';
           stylesheet.rel = 'stylesheet';
           stylesheet.type = 'text/css';
-          document.getElementsByTagName('head')[0].appendChild(stylesheet);
+          var head = document.getElementsByTagName('head')[0]
+          head.insertBefore(stylesheet, head.firstChild);
       }
 
       function startAnimationWhenViewed() {
